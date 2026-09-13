@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WBeauty - Yuchen Xiao</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700&family=Irish+Grover&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body>
+  <header class="topnav">
+    <a href="index.html" class="brand">Yuchen&nbsp;Xiao</a>
+    <nav class="topnav-links" aria-label="Primary">
+      <a href="design.html" aria-current="page">UX/UI Design Works</a>
+      <a href="research.html">Research</a>
+      <a href="art.html">Arts</a>
+      <a href="resume.pdf" download>Resume</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="pc">
+      <p class="pc-kicker">User Research · Project Lead · Human Centred Design</p>
+      <h1 class="pc-title">WBeauty - a peer-to-peer beauty service platform for Wellesley students</h1>
+
+      <dl class="pc-meta">
+        <div><dt>Role</dt><dd>Project Lead · UX/UI Designer · UX Researcher</dd></div>
+        <div><dt>Team</dt><dd>2 people - I led end-to-end</dd></div>
+        <div><dt>Timeline</dt><dd><em>Sep - Dec 2025</em></dd></div>
+        <div><dt>Tools</dt><dd>Figma · paper prototyping · contextual inquiry · moderated usability testing</dd></div>
+        <div><dt>Context</dt><dd>CS 220 (HCI), Wellesley College</dd></div>
+      </dl>
+
+      <div class="pc-tldr">I let to design a mobile app that lets Wellesley students both offer and receive affordable beauty services on campus, using a token-based exchange instead of cash. Across two rounds of testing on low- and high-fidelity prototypes, the final design achieved a <strong>92% task success rate</strong>, with users especially praising the color-coded dual-role system.</div>
+
+      <div class="pc-hero-row">
+        <img src="assets/wbeauty/hero/home-client.png" alt="WBeauty client home page showing artist reviews and promotions" loading="lazy">
+        <img src="assets/wbeauty/hero/profile-client.png" alt="WBeauty client profile page showing tokens, booked services, and history" loading="lazy">
+        <img src="assets/wbeauty/hero/profile-artist.png" alt="WBeauty artist profile page showing tokens, services offered, and appointments" loading="lazy">
+        <img src="assets/wbeauty/hero/shop-artist.png" alt="WBeauty artist toolkit shop page showing supplies priced in tokens" loading="lazy">
+      </div>
+
+      <div class="pc-body">
+        <h2>The Problem</h2>
+        <p>Many Wellesley students, especially those juggling classes, extracurriculars, and part-time jobs, struggle to access affordable, high-quality beauty services like haircuts, nail care, and lash extensions. The town of Wellesley is expensive, so students often travel as far as Chinatown in Boston for reasonably priced services, which is a trip that costs hours they don&rsquo;t have.</p>
+        <p>Meanwhile, other students <em>have</em> these skills and want to practice them, like aspiring nail techs building toward certification, students who cut hair for friends, but have no structured way to find clients, promote their work, or be trusted by strangers.</p>
+        <p>Existing informal channels like Yik Yak and Sidechat offer no verification, no reviews, and no booking structure. Therefore, my partner and I saw a clear opportunity: a campus-specific, peer-to-peer platform where students can be both providers and receivers of beauty services.</p>
+        <p><strong>Design question:</strong> <em>How might we help Wellesley students exchange beauty services in a way that feels safe, affordable, and convenient for both sides of the service exchange?</em></p>
+
+        <h2>My Role</h2>
+        <p>I led this two-person project from 0 to 1. I was responsible for:</p>
+        <ul>
+          <li>Designing the interview protocol and leading the ideation, prototyping, and evaluation phases</li>
+          <li>The UX/UI design of the final prototype, where I established the design system (colors, typography, components, layout rules) and designed or redesigned every screen to that standard</li>
+          <li>Planning and running both rounds of moderated usability testing, and translating findings into design iterations</li>
+          <li>The visual identity: color system, logo, typography, and component consistency</li>
+        </ul>
+
+        <h2>Research: Understanding How Students Actually Get These Services</h2>
+        <p>We began with contextual inquiry interviews with current Wellesley students, structured around a 13-question protocol I helped design. We asked about routines, motivations (big events turned out to be a major trigger), how they find providers today, and what would make them trust a <em>fellow student</em> with a beauty service.</p>
+        <figure class="pc-figure" style="text-align: center;">
+          <img src="assets/wbeauty/interview-protocol.png"
+              alt="The full 13-question interview protocol"
+              loading="lazy"
+              style="display: block; max-height: 700px; max-width: 100%; width: auto; margin: 0 auto; object-fit: contain;">
+          <figcaption style="font-style: italic;">The 13-question contextual-inquiry protocol</figcaption>
+        </figure>
+        <h3>Key insights</h3>
+        <ol>
+          <li><strong>Cost and travel time are the core pain points.</strong> Students overpay locally or lose half a day traveling to Boston.</li>
+          <li><strong>Trust became a crucial factor.</strong> Students were open to peer services, but only with verification, reviews, and a way to communicate before committing.</li>
+          <li><strong>Providers need visibility and community exposure.</strong> Student providers wanted to showcase work, build a client base, and get inspiration.</li>
+          <li><strong>Money exchange between students felt awkward.</strong> This led to a token system, where students can earn credits by providing, spend them receiving.</li>
+        </ol>
+        <h3>Personas</h3>
+
+          <P><strong>Julia</strong>: an artistic studio-art major working toward her
+              nail-technician certification (provider-side goals).</P>
+          <p><strong>Lila</strong>: a busy, introverted CS major who hopes to maintain
+              a professional appearance for interviews (receiver-side goals).</p>
+
+        <div style="max-width: 700px; margin: 0 auto;">
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+          
+          <figure style="flex: 1; margin: 0; text-align: center;">
+            <img src="assets/wbeauty/persona-julia.png"
+                alt="Persona card for Julia"
+                loading="lazy"
+                style="display: block; width: 100%; height: auto; margin: 0 auto;">
+          </figure>
+
+          <figure style="flex: 1; margin: 0; text-align: center;">
+            <img src="assets/wbeauty/persona-lila.png"
+                alt="Persona card for Lila"
+                loading="lazy"
+                style="display: block; width: 100%; height: auto; margin: 0 auto;">
+          </figure>
+
+        </div>
+
+        <figure class="pc-figure" style="text-align: center; margin: 30px 0 0;">
+          <img src="assets/wbeauty/storyboard-julia.png"
+              alt="Eight-panel storyboard following Julia"
+              loading="lazy"
+              style="display: block; width: 100%; max-width: 700px; height: auto; margin: 0 auto;">
+          <figcaption style="text-align: center; font-style: italic; margin-bottom: 20px;">
+            Storyboard: Julia from doing friends&rsquo; nails to earning certificate through the app
+          </figcaption>
+        </figure>
+        </div>
+        <p>Writing storyboards for both personas forced an important realization early: the same student might be Julia on Monday and Lila on Friday. The app couldn't treat providers and receivers as separate audiences. It had to make users being both roles effortless.</p>
+
+        <h2>Ideation &amp; Early Design Decisions</h2>
+        <p>I sketched multiple layout directions, focusing on four hard problems: distinguishing artist vs. client roles, the booking workflow, profile clarity, and chat integration.</p>
+        <figure class="pc-figure" style="display: flex; flex-direction: column; align-items: center; max-width: 600px; margin: 0 auto 24px;">
+          <img src="assets/wbeauty/design-sketch-1.png" alt="Hand-drawn design sketch, first direction" loading="lazy">
+          <figcaption style="text-align: center; font-style: italic;">Sketched wireframe</figcaption>
+        </figure>
+        <p>After critique, I committed to the defining structural decision: <strong>every user is both artist and client, and can switch roles with a single tap.</strong> Supporting decisions: a <strong>token economy</strong> (with a toolkit shop to spend earned tokens), <strong>chat before booking</strong>, and <strong>QR-code attendance confirmation</strong> that triggers the token transfer, so tokens only transfer when the service verifiably happened.</p>
+        <figure class="pc-figure"><img src="assets/wbeauty/lofi-overview.png" alt="Low-fidelity wireframe map of client and artist flows" loading="lazy"><figcaption style="text-align: center; font-style: italic;">Low-fidelity wireframes covering both flows end-to-end</figcaption></figure>
+
+        <h2>Usability Testing, Round 1 (Low-Fidelity)</h2>
+        <p>Participants completed four core tasks, checking a profile, booking, switching roles, and chatting, followed by a questionnaire.</p>
+        <figure class="pc-figure" style="max-width: 600px; margin-left: auto; margin-right: auto;"><img src="assets/wbeauty/usability-test-tasks.png" alt="The four usability testing tasks and questionnaire" loading="lazy"><figcaption style="text-align: center; font-style: italic;">User Testing Protocol</figcaption></figure>
+        <p><strong>What worked:</strong> participants found the design intuitive, praising booking cancellation and visible service history.</p>
+        <p><strong>What didn&rsquo;t:</strong></p>
+        <table class="pc-table">
+          <thead><tr><th>Problem Observed</th><th>What we learned</th></tr></thead>
+          <tbody>
+            <tr><td>Users tried to book from the <strong>homepage</strong>, not the booking tab</td><td>Promotional content created an expectation of action, not just browsing</td></tr>
+            <tr><td>Artists struggled to find the <strong>shop</strong></td><td>The shop was buried; providers&rsquo; key feature had no visibility</td></tr>
+            <tr><td>Users saw their <strong>token balance</strong> but not its purpose</td><td>The token system needed to explain itself in context</td></tr>
+            <tr><td>Some users missed the <strong>bottom tab bar</strong></td><td>Navigation hierarchy was too weak</td></tr>
+            <tr><td>Users expected <strong>reply-time info</strong> under posts</td><td>Trust requires setting communication expectations</td></tr>
+          </tbody>
+        </table>
+        <h3>Iterations after Round 1 Testing</h3>
+        <ul>
+          <li><strong>Added homepage-booking:</strong> connected posts and promotions directly into the booking flow — making the &ldquo;wrong&rdquo; path official</li>
+          <li><strong>Differentiate the tab bars by role:</strong> clients get a booking-centered bar; artists get a shop-centered one</li>
+          <li>Added average reply time, multi-artist map pins, in-profile cancellation, and larger fonts</li>
+        </ul>
+        <figure class="pc-figure" style="max-width: 700px; margin-left: auto; margin-right: auto;"><img src="assets/wbeauty/figure-1-color-tabbar.png" alt="Pink client interface and blue artist interface with different tab bars" loading="lazy"><figcaption style="text-align: center; font-style: italic;">Two-color role coding: pink client side, blue artist side</figcaption></figure>
+
+        <h2>High-Fidelity Design</h2>
+        <ul>
+          <li><strong>Two-color role system:</strong> pinkish purple (#F6F0FA) client side, blue (#EFF3FA) artist side — so users always know which mode they&rsquo;re in</li>
+          <li><strong>Consistency systems:</strong> Istok Web throughout; figure-ground on clickable elements; shared tab-bar structure; Google&rsquo;s icon library for recognizable patterns</li>
+          <li><strong>New functions at hi-fi:</strong> role-based tab bars, shop item detail pages, in-profile booking cancellation</li>
+        </ul>
+        <figure class="pc-figure" style="max-width:700px;margin-left:auto;margin-right:auto;">
+  <img src="assets/wbeauty/hifi-booking-flow.png" alt="High-fidelity booking flow screens" loading="lazy">
+  <figcaption style="text-align: center; font-style: italic;">High-fi Booking Flow</figcaption>
+</figure>
+
+<figure class="pc-figure" style="max-width:500px;margin-left:auto;margin-right:auto;">
+  <img src="assets/wbeauty/qr-attendance.png" alt="QR attendance screen transferring 10 tokens" loading="lazy">
+  <figcaption style="text-align: center; font-style: italic;">QR attendance closes the token loop: scan to confirm the appointment and transfers 10 tokens</figcaption>
+</figure>
+<h3>Functional Prototype</h3>
+        <figure class="pc-figure" style="max-width:900px; margin:24px auto 14px;">
+          <iframe title="WBeauty client-flow prototype (Figma)" loading="lazy" allowfullscreen
+            src="https://embed.figma.com/proto/tyVAXtCbX5tlPiVcf8ah3w/P5-High-fidelity-prototype?node-id=4-7&amp;p=f&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=4%3A7&amp;show-proto-sidebar=1&amp;embed-host=share"
+            style="width:100%; aspect-ratio:16/9; height:auto; border:1px solid rgba(0,0,0,0.1); border-radius:var(--radius); display:block;"></iframe>
+          <figcaption>Tip: tap the profile icon to switch between client and artist modes.</figcaption>
+        </figure>
+
+        <p class="pc-tldr" style="display:flex; justify-content:flex-start; gap:12px 32px; flex-wrap:wrap; font-family:'Inconsolata',monospace; font-size:18px; margin:0 0 40px;">
+          <a href="https://embed.figma.com/proto/tyVAXtCbX5tlPiVcf8ah3w/P5-High-fidelity-prototype?node-id=52-333&amp;p=f&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=52%3A333&amp;show-proto-sidebar=1&amp;embed-host=share" target="_blank" rel="noopener">Explore the artist side &rarr;</a>
+          <a href="https://embed.figma.com/proto/tyVAXtCbX5tlPiVcf8ah3w/P5-High-fidelity-prototype?node-id=4-7&amp;p=f&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=4%3A7&amp;show-proto-sidebar=1&amp;embed-host=share" target="_blank" rel="noopener">Open prototype in Figma &rarr;</a>
+        </p>
+
+        <h2>Usability Testing, Round 2 (High-Fidelity)</h2>
+        <table class="pc-table">
+          <thead><tr><th>Task</th><th>Success</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Book an appointment &amp; view a profile</td><td>4/4 (100%)</td><td>3 of 4 started from the homepage, validating the Round 1 decision</td></tr>
+            <tr><td>Switch between client and artist roles</td><td>4/4 (100%)</td><td>Users cited the color differentiation as helpful</td></tr>
+            <tr><td>Use the chat function</td><td>3/4 (75%)</td><td>The one failure came from overlooking the tab bar</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Overall: 92% task success.</strong> The color-separated dual-role system was the feature users understood most clearly.</p>
+
+        <h2>What I&rsquo;d Do Next</h2>
+        <ul>
+          <li><strong>Apply Fitts&rsquo;s Law to touch targets</strong>: several users reported that the buttons tested were too small</li>
+          <li><strong>Promote the toolkit shop on first launch</strong> for artists</li>
+          <li>Add a persistent back-to-booking button or breadcrumb so users who were directed to chat can return and finish booking without losing context</li>
+        </ul>
+
+        <p style="margin-top:48px"><a href="design.html" style="display:inline-block; padding:12px 24px; background:#FFFFFF; color:#6D422A; border:2px solid #6D422A; border-radius:0; font-family:'Inconsolata',monospace; font-weight:700; font-size:16px; text-decoration:none;">&larr; All design work</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="hp-footer">
+    <div class="foot-left">
+      <div class="lead">Let&rsquo;s connect!</div>
+      <div class="who">Yuchen Xiao · Wellesley College</div>
+    </div>
+    <nav class="foot-right" aria-label="Contact">
+      <a href="https://www.linkedin.com/in/yuchen-xiao-a57701251/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:yx106@wellesley.edu">Email</a>
+      <a href="https://app.joinhandshake.com/profiles/cx3z9w" target="_blank" rel="noopener">Handshake</a>
+      <a href="resume.pdf" download>Resume</a>
+    </nav>
+  </footer>
+</body>
+</html>

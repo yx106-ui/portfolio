@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bee My Eyes — Yuchen Xiao</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700&family=Irish+Grover&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=4">
+<style>
+  /* ===== Bee My Eyes case study ===== */
+  .bme { width: min(1120px, 100% - 96px); margin: 0 auto; padding: clamp(40px, 6vw, 72px) 0 96px; }
+
+  /* header */
+  .bme-kicker { font-family: "Inconsolata", cursive; font-size: 18px; color: #6D422A; margin: 0 0 18px; line-height: 1.3; }
+  .bme-kicker .dot { display: inline-block; width: 9px; height: 9px; border-radius: 999px; background: var(--decor); margin-right: 12px; vertical-align: middle; }
+  .bme-title { font-family: "Irish Grover", cursive; font-weight: 400; font-size: clamp(34px, 4.4vw, 46px); color: #3F525F; margin: 0 0 28px; line-height: 1.15; }
+
+  .bme-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px 40px; margin: 0 0 28px; max-width: 1000px; }
+  .bme-meta dt { font-family: "Inconsolata", monospace; font-weight: 700; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; color: #000000; margin-bottom: 2px; }
+  .bme-meta dd { font-family: "Inconsolata", monospace; font-size: 16px; color: #000000; margin: 0; line-height: 1.5; }
+
+  .bme-tldr { border-left: 4px solid #6D422A; background: #F5F3ED; border-radius: 0; padding: 20px 24px; margin: 0 0 36px;
+    font-family: "Inconsolata", monospace; font-size: 18px; color: #3F525F; line-height: 1.6; }
+  .bme-tldr strong { font-weight: 700; }
+
+  /* media: everything square-cornered */
+  .bme img, .bme video, .bme iframe { border-radius: 0; display: block; }
+
+  .bme-video { margin: 0 0 12px; text-align: center; }
+  .bme-video video { max-height: 650px; max-width: 100%; width: auto; margin: 0 auto; }
+  .bme-cap { font-family: "Inconsolata", monospace; font-size: 16px; color: #000000; margin: 0 0 40px; text-align: center; font-style: italic; }
+
+  /* body — full-width prose, black */
+  .bme-body h2 { font-family: "Inconsolata", monospace; font-weight: 700; font-size: 28px; color: #000000; margin: 48px 0 16px; line-height: 1.3; }
+  .bme-body h3 { font-family: "Inconsolata", monospace; font-weight: 700; font-size: 21px; color: #000000; margin: 28px 0 10px; }
+  .bme-body p, .bme-body li { font-family: "Inconsolata", monospace; font-weight: 400; font-size: 20px; color: #000000; line-height: 1.6; }
+  .bme-body p { margin: 0 0 18px; }
+  .bme-body ul, .bme-body ol { margin: 0 0 18px; padding-left: 1.4em; }
+  .bme-body li { margin-bottom: 12px; }
+  .bme-body strong { font-weight: 700; }
+  .bme-body em { font-style: italic; }
+
+  .bme-note { border-left: 4px solid #6D422A; background: #F5F3ED; border-radius: 0; padding: 18px 22px; margin: 24px 0;
+    font-family: "Inconsolata", monospace; font-size: 18px; color: #000000; line-height: 1.6; }
+
+  /* three core screens, one row */
+  .bme-screens { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; margin: 8px 0 24px; }
+  .bme-screens figure { margin: 0; }
+  .bme-screens img { width: 100%; height: auto; }
+  .bme-screens figcaption { font-family: "Inconsolata", monospace; font-size: 16px; color: #000000; margin-top: 12px; line-height: 1.5; text-align: center; font-style: italic; }
+
+  /* pitch deck */
+  .bme-deck { border: 1px solid #6D422A; border-radius: 0; margin: 8px 0 16px; }
+  .bme-deck iframe { width: 100%; height: 640px; border: 0; display: block; }
+  .bme-deck-load { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; height: 320px; background: #F5F3ED; border: 0; cursor: pointer; font-family: "Inconsolata", monospace; }
+  .bme-deck-load:hover { background: #ECECEC; }
+  .bme-deck-title { font-size: 22px; font-weight: 700; color: #3F525F; }
+  .bme-deck-sub { font-size: 15px; color: #000000; }
+
+  .bme-built { font-family: "Inconsolata", monospace; font-size: 16px; color: #000000; margin-top: 40px; }
+
+  @media (max-width: 820px) {
+    .bme-title { font-size: 32px; }
+    .bme-screens { grid-template-columns: 1fr; }
+    .bme-deck iframe { height: 60vw; min-height: 320px; }
+  }
+</style>
+</head>
+<body>
+  <header class="topnav">
+    <a href="index.html" class="brand">Yuchen&nbsp;Xiao</a>
+    <nav class="topnav-links" aria-label="Primary">
+      <a href="design.html" aria-current="page">UX/UI Design Works</a>
+      <a href="research.html">Research</a>
+      <a href="art.html">Arts</a>
+      <a href="resume.pdf" download>Resume</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="bme">
+      <p class="bme-kicker">AI Prototyping · Buildathon · Vibe Coding · Game Design</p>
+      <h1 class="bme-title">Bee My Eyes — prototyping an amblyopia training game with AI</h1>
+
+      <dl class="bme-meta">
+        <div><dt>Role</dt><dd>Design &amp; front-end vibecoding — I owned visual design and drove AI prototyping in Lovable</dd></div>
+        <div><dt>Team</dt><dd>Team 42, 4 people — Emily Li, Tanya Shi, Qiyan Su, and me</dd></div>
+        <div><dt>Event</dt><dd>The Generator Buildathon 2025, Babson College</dd></div>
+        <div><dt>Timeline</dt><dd>~8 hours</dd></div>
+        <div><dt>Tools</dt><dd>Lovable · Canva for the deck</dd></div>
+        <div><dt>Type</dt><dd>Rapid concept prototype + pitch</dd></div>
+      </dl>
+
+      <div class="bme-tldr"> In a single buildathon, my team designed and shipped a working prototype of <em>Bee My Eyes</em> — a maze game that helps children with amblyopia (&ldquo;lazy eye&rdquo;) train their weaker eye <em>and</em> their hand-eye coordination, using red-blue anaglyph colors and an adaptive difficulty system. My biggest takeaway was learning how to <em>STEER</em> an AI builder through precise prompting.</div>
+
+      <figure class="bme-video">
+        <video src="assets/bee-my-eyes/demo.mp4" autoplay muted loop playsinline aria-label="26-second prototype demo of the Bee My Eyes maze game"></video>
+      </figure>
+      <p class="bme-cap">Prototype Demo: A Playable Game</p>
+
+      <div class="bme-body">
+        <h2>The Concept</h2>
+        <p>Amblyopia, or &ldquo;lazy eye,&rdquo; is the most common cause of vision loss in children - affecting up to 3 in 100 kids. It happens when the brain starts favoring one eye, so the weaker eye never fully develops. Standard treatments mostly focus on forcing the weak eye to work <em>alone</em>.</p>
+        <p>We spotted a gap: most existing games train the weak eye in isolation and ignore <strong>hand-eye coordination</strong>, which amblyopia also affects. So we framed our question around cooperation:</p>
+        <p><em>How might we help children train their weaker eye and their hand-eye coordination at the same time in something that actually feels like play?</em></p>
+        <p><strong>Our solution: Bee My Eyes</strong> - a kid-friendly maze game where a worker bee collects flowers and reaches the queen. Worn with red-blue anaglyph glasses, the color design sends different information to each eye, gently pushing the weaker eye to engage while the child uses their hands to navigate.</p>
+
+        <h2>The Design</h2>
+        <p>We built three core screens in the prototype:</p>
+        <div class="bme-screens">
+          <figure><img src="assets/bee-my-eyes/homepage.png" alt="Homepage with daily streak system" loading="lazy"><figcaption><strong>Homepage</strong> - a daily streak system to build the training habit vision therapy depends on</figcaption></figure>
+          <figure><img src="assets/bee-my-eyes/game-page.png" alt="Worker Bee Maze game page" loading="lazy"><figcaption><strong>Game page</strong> - the &ldquo;Worker Bee Maze&rdquo;; red/blue separation is the therapeutic core</figcaption></figure>
+          <figure><img src="assets/bee-my-eyes/results-suppression-score.png" alt="Results page with a suppression score" loading="lazy"><figcaption><strong>Results page</strong> - a suppression score (0to1) drives a simple adaptive-difficulty loop</figcaption></figure>
+        </div>
+        <ol>
+          <li><strong>An interesting theme that carries the therapy.</strong> &ldquo;Help the worker bee reach the queen&rdquo; gives children a reason to keep going through repetitive visual training.</li>
+          <li><strong>Habit design.</strong> The streak treats the real challenge, habit, honestly: frequent engagement is the key.</li>
+          <li><strong>Adaptive system.</strong> The suppression score automatically adjusts contrast without introducing any punishment mechanics.</li>
+        </ol>
+        <div class="bme-note">Bee My Eyes is a hackathon concept prototype, not a clinically validated medical device. The suppression score and adaptive contrast are a plausible model, not a tested treatment.</div>
+
+        <h2>Learning to Vibecode</h2>
+        <p>This was my first time using <strong>Lovable</strong> to build a real, working prototype from natural-language prompts. What I learned is that <strong>AI prototype building is a design skill of its own, and the quality of what you get out depends heavily on how detailed your prompt is and whether you provide a plausible example to work from.</p>
+        <h3>1. Specificity prompting beats general description</h3>
+        <p>Early on, &ldquo;put a jar on the left&rdquo; gave a generic, misplaced result. The output only matched once I described layout concretely, like naming the container, position, icon, and exact label format. I learned to prompt as if I were writing a component description, including every detailed feature I could think of.</p>
+        <h3>2. Calibrating the &ldquo;vibe&rdquo; through keywords</h3>
+        <p>I also learned to choose certain phrases carefully. For example, calling the movement arrows &ldquo;buttons&rdquo; gave inconsistent results, but prompting for a <strong>&ldquo;control panel (interactive movement buttons)&rdquo;</strong> reliably produced the grouped directional control I wanted.</p>
+        <h3>3. Using our own knowledge to navigate challenges when AI prototyping broke down</h3>
+        <p>Our biggest struggle was movement. Because the game is grid-based, getting the bee to move <em>correctly</em> was surprisingly hard. Left to loose prompts, Lovable would let the bee move diagonally or walk off the board. Fixing it took prompting in the game&rsquo;s own logic: We identified the movement coordination system through coding and describing movement in x and y coordinates, allowing only one step horizontally or vertically at a time, always within bounds.</p>
+
+        <h2>Pitch Deck</h2>
+        <p>The full deck our team presented at The Generator Buildathon — the concept, the therapeutic rationale, and the live prototype walkthrough.</p>
+        <div class="bme-deck" id="deck">
+          <button type="button" class="bme-deck-load" id="deckLoad" aria-label="Load the pitch deck">
+            <span class="bme-deck-title">▶ Load the pitch deck</span>
+            <span class="bme-deck-sub">9 slides · PDF · ~3.5 MB</span>
+          </button>
+        </div>
+        <p><a class="btn btn-ghost" href="assets/bee-my-eyes/Bee%20My%20Eyes.pdf" target="_blank" rel="noopener">Open the slides (PDF) ↗</a></p>
+        <script>
+          document.getElementById('deckLoad').addEventListener('click', function () {
+            document.getElementById('deck').innerHTML =
+              '<iframe src="assets/bee-my-eyes/Bee%20My%20Eyes.pdf#view=FitH" title="Bee My Eyes pitch deck (PDF)"></iframe>';
+          });
+        </script>
+
+        <p class="bme-built">Built at The Generator Buildathon 2025 · Team 42</p>
+
+        <p style="margin-top:48px"><a href="design.html" style="display:inline-block; padding:12px 24px; background:#FFFFFF; color:#6D422A; border:2px solid #6D422A; border-radius:0; font-family:'Inconsolata',monospace; font-weight:700; font-size:16px; text-decoration:none;">&larr; All design work</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="hp-footer">
+    <div class="foot-left">
+      <div class="lead">Let&rsquo;s connect!</div>
+      <div class="who">Yuchen Xiao · Wellesley College</div>
+    </div>
+    <nav class="foot-right" aria-label="Contact">
+      <a href="https://www.linkedin.com/in/yuchen-xiao-a57701251/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:yx106@wellesley.edu">Email</a>
+      <a href="https://app.joinhandshake.com/profiles/cx3z9w" target="_blank" rel="noopener">Handshake</a>
+      <a href="resume.pdf" download>Resume</a>
+    </nav>
+  </footer>
+</body>
+</html>

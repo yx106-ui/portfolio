@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Design — Yuchen Xiao</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700&family=Irish+Grover&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=4">
+<style>
+  /* ===== Design / Work page (per Yuchen's ideation) ===== */
+  .work { width: min(1071px, 100% - 48px); margin: 0 auto; padding: clamp(40px, 6vw, 72px) 0 96px; }
+
+  .work-title { font-family: "Irish Grover", cursive; font-weight: 400; font-size: 48px; color: #3F525F; margin: 0 0 14px; line-height: 1.1; }
+  .work-intro { font-family: "Inconsolata", monospace; font-size: 18px; color: #3F525F; margin: 0 0 40px; max-width: 68ch; }
+
+  .work-list { display: flex; flex-direction: column; gap: 40px; }
+
+  .work-item {
+    display: flex; align-items: center; gap: 40px;
+    width: 100%; min-height: 433px;
+    background: #F5F3ED; border: 4px solid #6D422A; border-radius: 0;
+    padding: 40px 48px; box-sizing: border-box;
+    text-decoration: none; transition: box-shadow var(--ease);
+  }
+  .work-item:hover { box-shadow: var(--shadow-soft); }
+
+  .work-text { flex: 1 1 auto; min-width: 0; }
+  .work-head { display: flex; align-items: center; gap: 16px; flex-wrap: nowrap; margin-bottom: 20px; }
+  .work-head h2 { font-family: "Irish Grover", cursive; font-weight: 400; font-size: 40px; color: #6D422A; margin: 0; line-height: 1; flex: 0 1 auto; }
+  .work-logos { display: flex; align-items: center; gap: 12px; flex: 0 0 auto; }
+  .work-logos img { height: 36px; width: auto; display: block; }
+
+  .work-tags { font-family: "Inconsolata", monospace; font-size: 24px; font-weight: 700; color: #3F525F; margin: 0 0 20px; line-height: 1.35; }
+  .work-desc { font-family: "Inconsolata", monospace; font-size: 24px; font-weight: 400; color: #000000; line-height: 1.5; margin: 0; }
+
+  .work-hero { flex: 0 0 400px; }
+  .work-hero img { width:auto; max-width: 400px; object-fit: cover; object-position: top center; display: block; border-radius: 0; }
+
+  /* Mobile: stack, hero below text, box grows to fit */
+  @media (max-width: 900px) {
+    .work-title { font-size: 38px; }
+    .work-item { flex-direction: column; align-items: flex-start; min-height: 0; gap: 24px; padding: 28px 24px; }
+    .work-hero { flex: none; width: 100%; }
+    .work-hero img { width: 100%; height: auto; aspect-ratio: 437 / 350; }
+    .work-head h2 { font-size: 32px; }
+    .work-tags, .work-desc { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+  <header class="topnav">
+    <a href="index.html" class="brand">Yuchen&nbsp;Xiao</a>
+    <nav class="topnav-links" aria-label="Primary">
+      <a href="design.html" aria-current="page">UX/UI Design Works</a>
+      <a href="research.html">Research</a>
+      <a href="art.html">Arts</a>
+      <a href="resume.pdf" download>Resume</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="work">
+      <h1 class="work-title">UX/UI Design Work</h1>
+      <p class="work-intro">Interface and interaction design projects spanning coursework, nonprofit collaborations, and buildathons.</p>
+
+      <div class="work-list">
+
+        <!-- WBeauty -->
+        <a class="work-item" href="wbeauty.html">
+          <div class="work-text">
+            <div class="work-head">
+              <h2>WBeauty</h2>
+              <span class="work-logos"><img src="assets/wellesley.png" alt="Wellesley College logo"></span>
+            </div>
+            <p class="work-tags">User Research / Project Lead / Human-Centred Design</p>
+            <p class="work-desc">A peer-to-peer beauty services platform for Wellesley College students featuring a token economy and a color-coded dual-role system. Conducted extensive contextual inquiry and usability testing, achieving a 92% task success rate.</p>
+          </div>
+          <div class="work-hero"><img src="assets/fontW.jpeg" alt="WBeauty client home screen" loading="lazy"></div>
+        </a>
+
+        <!-- Let's Fly Now -->
+        <a class="work-item" href="lets-fly-now.html">
+          <div class="work-text">
+            <div class="work-head">
+              <h2>Let&rsquo;s Fly Now!</h2>
+              <span class="work-logos">
+                <img src="assets/99s.png" alt="The Ninety-Nines logo">
+                <img src="assets/develop4good.png" alt="Develop for Good logo">
+              </span>
+            </div>
+            <p class="work-tags">Client Work / Forms / Engineering Handoff / Teamwork</p>
+            <p class="work-desc">Redesigned the Ninety-Nines&rsquo; event experience (via Develop for Good), including the landing page, event information pages, and participant registration workflow, transforming easily misplaced paper forms into a structured digital system.</p>
+          </div>
+          <div class="work-hero"><img src="assets/fontL.jpeg" alt="Let's Fly Now landing page" loading="lazy"></div>
+        </a>
+
+        <!-- Bee My Eyes -->
+        <a class="work-item" href="bee-my-eyes.html">
+          <div class="work-text">
+            <div class="work-head">
+              <h2>Bee My Eyes</h2>
+              <span class="work-logos"><img src="assets/babson.jpg" alt="Babson College logo"></span>
+            </div>
+            <p class="work-tags">AI Prototyping / Buildathon / Vibe Coding / Game Design</p>
+            <p class="work-desc">A maze game that helps children with amblyopia train their weaker eye and their hand-eye coordination at once, using red-blue anaglyph colors and adaptive difficulty. Designed and vibecoded in a single 8-hour buildathon at Babson&rsquo;s Generator.</p>
+          </div>
+          <div class="work-hero"><img src="assets/fontB.jpeg" alt="Bee My Eyes game page" loading="lazy"></div>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="hp-footer">
+    <div class="foot-left">
+      <div class="lead">Let&rsquo;s connect!</div>
+      <div class="who">Yuchen Xiao · Wellesley College</div>
+    </div>
+    <nav class="foot-right" aria-label="Contact">
+      <a href="https://www.linkedin.com/in/yuchen-xiao-a57701251/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:yx106@wellesley.edu">Email</a>
+      <a href="https://app.joinhandshake.com/profiles/cx3z9w" target="_blank" rel="noopener">Handshake</a>
+      <a href="resume.pdf" download>Resume</a>
+    </nav>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Loading — Yuchen Xiao</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=4">
+<style>
+  /* ---- Loader (§6): rain over mountain, CSS-only, first load, max 2s ---- */
+  .loader {
+    position: fixed; inset: 0; z-index: 100; display: grid; place-items: center;
+    background: var(--bg); overflow: hidden; transition: opacity 400ms ease-out;
+  }
+  .loader.done { opacity: 0; pointer-events: none; }
+  /* mountain held behind everything, lightened to sit under the UI */
+  .loader-mountain {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    opacity: 0.55; z-index: 0;
+    -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
+            mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
+  }
+  /* fallback wash if the image fails */
+  .loader::before { content: ""; position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(to bottom, var(--bg), color-mix(in srgb, var(--decor) 30%, var(--bg))); }
+
+  .rain { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+  .drop {
+    position: absolute; top: -12%; width: 1.5px; height: 64px;
+    background: linear-gradient(to bottom, transparent, var(--decor));
+    opacity: 0.5; animation: fall linear infinite;
+  }
+  @keyframes fall { to { transform: translateY(130vh); } }
+
+  .loader-progress { position: relative; z-index: 2; text-align: center; }
+  .loader-progress .pct { font-family: "Inconsolata", monospace; font-size: var(--fs-small); color: var(--text-muted); letter-spacing: 0.04em; }
+
+  .demo-note { position: fixed; bottom: 20px; left: 0; right: 0; z-index: 101; text-align: center; font-size: var(--fs-small); color: var(--text-muted); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .drop { display: none; }              /* §6.2: no rain, static mountain */
+    .loader { transition: none; }
+  }
+</style>
+</head>
+<body>
+  <!-- Real content sits behind the loader, accessible to screen readers (§6.4) -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <img class="loader-mountain" src="assets/mountain.png" alt="" onerror="this.style.display='none'">
+    <div class="rain" id="rain"></div>
+    <div class="loader-progress">
+      <div class="pct"><span id="pct">0</span>%</div>
+    </div>
+  </div>
+
+  <p class="demo-note">Loader demo &mdash; dismisses in ~2s, then fades. It replays on reload (in the real site: first load only).</p>
+
+  <main class="container" style="padding-top:120px">
+    <h1 style="font-family:'Inconsolata',monospace;font-weight:700;font-size:var(--fs-h1)">Home content is here</h1>
+    <p style="color:var(--text-secondary);max-width:60ch">This page is a standalone demo of the loading screen. In the built site the loader overlays the real homepage, is <code>aria-hidden</code>, and never blocks the content behind it.</p>
+    <p><a class="btn btn-ghost" href="index.html">Go to the homepage &rarr;</a></p>
+  </main>
+
+  <script>
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const rain = document.getElementById('rain');
+    // build ~48 drops with varied speed/delay/position (natural randomness)
+    if (!reduce) {
+      for (let i = 0; i < 48; i++) {
+        const d = document.createElement('div');
+        d.className = 'drop';
+        d.style.left = Math.random() * 100 + '%';
+        d.style.animationDuration = (0.5 + Math.random() * 0.7) + 's';
+        d.style.animationDelay = (-Math.random() * 1.2) + 's';
+        d.style.opacity = 0.25 + Math.random() * 0.4;
+        d.style.height = (36 + Math.random() * 44) + 'px';
+        rain.appendChild(d);
+      }
+    }
+    // progress 0 -> 100 tied to a ~1.6s window (stand-in for real asset loading)
+    const pctEl = document.getElementById('pct');
+    const loader = document.getElementById('loader');
+    const start = performance.now();
+    const DURATION = 1600;
+    function tick(now) {
+      const p = Math.min(100, Math.round(((now - start) / DURATION) * 100));
+      pctEl.textContent = p;
+      if (p < 100) { requestAnimationFrame(tick); }
+      else { setTimeout(() => loader.classList.add('done'), 200); }
+    }
+    requestAnimationFrame(tick);
+  </script>
+</body>
+</html>

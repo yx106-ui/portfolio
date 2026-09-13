@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Let&rsquo;s Fly Now — Yuchen Xiao</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700&family=Irish+Grover&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body>
+  <header class="topnav">
+    <a href="index.html" class="brand">Yuchen&nbsp;Xiao</a>
+    <nav class="topnav-links" aria-label="Primary">
+      <a href="design.html" aria-current="page">UX/UI Design Works</a>
+      <a href="research.html">Research</a>
+      <a href="art.html">Arts</a>
+      <a href="resume.pdf" download>Resume</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="pc">
+      <p class="pc-kicker">Client Work · Forms · Engineering Handoff · Teamwork</p>
+      <h1 class="pc-title">Let&rsquo;s Fly Now - redesigning event sign-ups for the Ninety-Nines</h1>
+
+      <dl class="pc-meta">
+        <div><dt>Role</dt><dd>UX/UI Designer (one of two), via Develop for Good</dd></div>
+        <div><dt>Client</dt><dd>The Ninety-Nines, Inc. - international org of women pilots (est. 1929)</dd></div>
+        <div><dt>Team</dt><dd>7 people - PM, tech manager, 2 designers, 3 engineers</dd></div>
+        <div><dt>Timeline</dt><dd>Oct 2025 - Feb 2026</dd></div>
+        <div><dt>Tools</dt><dd>Figma (lo-fi &amp; hi-fi)</dd></div>
+        <div><dt>My focus</dt><dd>Landing page · sign-up flows for pilots, ground volunteers, passengers</dd></div>
+      </dl>
+
+      <div class="pc-tldr">The Ninety-Nines ran their Let&rsquo;s Fly Now events on paper sign-up forms, where data was collected inconsistently and regularly lost. As the student designer responsible for the landing page and all three sign-up flows, I designed a digital system that turns every participant type&rsquo;s registration into a structured, recoverable dataset, while making the program&rsquo;s entry point clearer and more welcoming.</div>
+
+      <figure class="pc-hero" style="text-align:center; margin:0 0 20px;">
+        <img src="assets/fontL.jpeg" alt="Let's Fly Now — final landing page and sign-up pages" loading="lazy" style="display:block; max-width:700px; width:100%; height:auto; margin:0 auto;">
+      </figure>
+      <p style="font-family:'Inconsolata',monospace; font-style:italic; font-size:20px; color:#3F525F; line-height:1.6; text-align:left; margin:0 0 44px;">This project provided design ideation and functional prototypes for The Ninety-Nines while they were simultaneously working with another company on their website redesign. Our team&rsquo;s work was intended as a design exploration and prototype, rather than a published website.</p>
+
+      <div class="pc-body">
+        <h2>The Problem</h2>
+        <p>Let&rsquo;s Fly Now events involve three kinds of participants: volunteer pilots, ground volunteers, and passengers (the women and girls taking their first flight). Historically, all of them signed up on paper forms at events.</p>
+        <ul>
+          <li>Sign-up data was <strong>collected inconsistently</strong> across chapters and events</li>
+          <li>Records were <strong>never reliably aggregated</strong>, and some data was simply <strong>lost</strong></li>
+          <li>The organization couldn&rsquo;t follow up with participants, track volunteer history, or report on reach</li>
+        </ul>
+        <p>Therefore, the redesign had a concrete operational goal: <strong>move sign-ups from paper to structured digital forms so the data survives.</strong></p>
+
+        <h2>Understanding the Client</h2>
+        <ul>
+          <li><strong>The stated request is rarely the whole need.</strong> They asked for a website redesign, but what they needed was actually a data pipeline.</li>
+          <li><strong>Nonprofits like the 99s design for volunteers, not employees.</strong> Every flow had to work for someone running an event for the first time, while also considering the three different stakeholders involved.</li>
+          <li><strong>Constraints are design inputs.</strong> Our pages had to live within the existing ninety-nines.org website, so we had to faithfully match its existing design language rather than impose our own.</li>
+        </ul>
+        <p>We ran a weekly cadence: a 45-minute meeting with the Ninety-Nines plus a 45-minute internal debrief. Requirements emerged over weeks of conversation, and the debriefs were where we translated what the client said into what we&rsquo;d actually design.</p>
+
+        <h2>My Contributions</h2>
+        <h3>1. Landing page redesign</h3>
+        <p>My partner and I redesigned the landing page as the program&rsquo;s front door: a clear description, a participant testimonial, and immediate paths into each role — <em>Join as a Pilot</em>, <em>Join as a Passenger</em>, <em>Join as a Ground Volunteer</em> — plus an event-organizer path with a step-by-step &ldquo;Event Actions&rdquo; guide and an FAQ.</p>
+        <figure class="pc-figure" style="text-align:center;">
+          <img src="assets/lets-fly-now/landing-page-full.png" alt="Full landing page scroll" loading="lazy" style="display:block; max-width:700px; width:100%; height:auto; margin:0 auto;">
+          <figcaption style="text-align:center; font-style:italic;">The redesigned landing page, full scroll</figcaption>
+        </figure>
+
+        <h3>2. Sign-up flows for all three participant types</h3>
+        <ul>
+          <li><strong>Pilots</strong>: a returning-pilot login vs. new-pilot sign-up split, collecting personal info plus required credentials (insurance, license documentation)</li>
+          <li><strong>Ground volunteers</strong>: a role explanation (&ldquo;the backbone of Let&rsquo;s Fly Now&rdquo;) with volunteer stories leading into a simple form</li>
+          <li><strong>Passengers</strong>: a form with conditional logic: under-18 passengers require guardian information. Guardian consent wasn&rsquo;t an edge case — it was a core requirement.</li>
+        </ul>
+        <p>I chose to have each flow end in a confirmation state, so participants know their registration was recorded. The exact assurance the paper system couldn&rsquo;t give anyone.</p>
+        <figure class="pc-figure" style="text-align:center;">
+          <img src="assets/lets-fly-now/lofi-wireframes.png" alt="Low-fidelity wireframe flow map" loading="lazy" style="display:block; max-width:900px; width:100%; height:auto; margin:0 auto;">
+          <figcaption style="text-align:center; font-style:italic;">Lo-fi wireframes — the full flow map</figcaption>
+        </figure>
+        <figure class="pc-figure" style="text-align:center;">
+          <img src="assets/lets-fly-now/hifi-form-pages.png" alt="High-fidelity form pages" loading="lazy" style="display:block; max-width:700px; width:100%; height:auto; margin:0 auto;">
+          <figcaption style="text-align:center; font-style:italic;">Hi-fi form pages — pilot sign-up &amp; volunteer page</figcaption>
+        </figure>
+
+        <h3>3. Storytelling as a recruitment tool</h3>
+        <p>I kept a section on each role page to include real stories—a pilot describing why volunteering reminded her why she loves aviation, and a ground volunteer recalling a scared first-time flyer telling her, like “You helped me feel ready.” I believed that for a volunteer-powered program, the sign-up page is also a persuasion page.</p>
+        <figure class="pc-figure" style="text-align:center;">
+          <img src="assets/lets-fly-now/Hi-fi signup.png" alt="High-fidelity join/create events pages" loading="lazy" style="display:block; max-width:700px; width:100%; height:auto; margin:0 auto;">
+          <figcaption style="text-align:center; font-style:italic;">Hi-fi join/create event pages</figcaption>
+        </figure>
+
+        <h2>Learning to work as part of a design team</h2>
+        <ol>
+          <li>My design partner taught me her user-flow diagramming approach, which I later applied to map all three journeys before designing a single screen.</li>
+          <li><strong>Owning part of a shared system.</strong> My pages had to feel continuous with my design partner&rsquo;s work <em>and</em> be buildable within what the engineers were implementing.</li>
+        </ol>
+        <p>At the end of the batch, we presented at the Develop for Good showcase and handed off our prototypes and recommendations. Throughout the design and handoff process, I learned that understanding a client’s operations is a design skill. The best screens I made came from asking what happens and what could be improved after each week’s check-in.</p>
+
+        <p style="margin-top:48px"><a href="design.html" style="display:inline-block; padding:12px 24px; background:#FFFFFF; color:#6D422A; border:2px solid #6D422A; border-radius:0; font-family:'Inconsolata',monospace; font-weight:700; font-size:16px; text-decoration:none;">&larr; All design work</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="hp-footer">
+    <div class="foot-left">
+      <div class="lead">Let&rsquo;s connect!</div>
+      <div class="who">Yuchen Xiao · Wellesley College</div>
+    </div>
+    <nav class="foot-right" aria-label="Contact">
+      <a href="https://www.linkedin.com/in/yuchen-xiao-a57701251/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:yx106@wellesley.edu">Email</a>
+      <a href="https://app.joinhandshake.com/profiles/cx3z9w" target="_blank" rel="noopener">Handshake</a>
+      <a href="resume.pdf" download>Resume</a>
+    </nav>
+  </footer>
+</body>
+</html>
